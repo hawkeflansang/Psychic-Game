@@ -16,6 +16,7 @@ triesLeft.textContent = "Guesses Left: " + guessesLeft;
 userGuesses.textContent = "Guesses Made: " + guessesMade;
 
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+console.log(computerGuess);
 
 
 
@@ -32,7 +33,12 @@ document.onkeyup = function(event) {
 
             wins++;
             winText.textContent = "Wins: " + wins;
+            guessesLeft = 9;
+            triesLeft.textContent = "Guesses Left: " + guessesLeft;
+            guessesMade = [];
+            userGuesses.textContent = "Guesses Made: " + guessesMade;
             computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            console.log(computerGuess);
             
 
         } else if (guessesLeft > 0) {
@@ -51,6 +57,7 @@ document.onkeyup = function(event) {
             guessesMade = [];
             userGuesses.textContent = "Guesses Made: " + guessesMade;
             computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            console.log(computerGuess);
             
 
         }
