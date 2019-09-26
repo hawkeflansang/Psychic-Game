@@ -15,10 +15,12 @@ loseText.textContent = "Losses: " + losses;
 triesLeft.textContent = "Guesses Left: " + guessesLeft;
 userGuesses.textContent = guessesMade;
 
+var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
 document.onkeyup = function(event) {
 
     var userChoice = event.key;
-    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    
     
     var validChoice = computerChoices.indexOf(userChoice);
 
@@ -27,6 +29,7 @@ document.onkeyup = function(event) {
         if (userChoice === computerGuess) {
 
             wins++;
+            winText.textContent = "Wins: " + wins;
         }
 
     }
