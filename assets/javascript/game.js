@@ -13,3 +13,10 @@ winText.textContent = "Wins: " + wins;
 loseText.textContent = "Losses: " + losses;
 triesLeft.textContent = "Guesses Left: " + guessesLeft;
 userGuesses.textContent = "";
+
+document.onkeyup = function(event) {
+
+    var userChoice = event.key;
+    var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+}
