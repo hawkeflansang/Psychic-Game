@@ -13,7 +13,7 @@ var userGuesses = document.getElementById("user-guesses");
 winText.textContent = "Wins: " + wins;
 loseText.textContent = "Losses: " + losses;
 triesLeft.textContent = "Guesses Left: " + guessesLeft;
-userGuesses.textContent = guessesMade;
+userGuesses.textContent = "Guesses Made: " + guessesMade;
 
 var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
@@ -30,6 +30,21 @@ document.onkeyup = function(event) {
 
             wins++;
             winText.textContent = "Wins: " + wins;
+        } else if (guessesLeft > 0) {
+
+            guessesMade.push(" " + userChoice);
+            userGuesses.textContent = "Guesses Made: " + guessesMade;
+            guessesLeft--;
+            triesLeft.textContent = "Guesses Left: " + guessesLeft;
+        } else {
+
+            losses++;
+            loseText.textContent = "Losses: " + losses;
+            guessesLeft = 9;
+            triesLeft.textContent = "Guesses Left: " + guessesLeft;
+            guessesMade = [];
+            userGuesses.textContent = "Guesses Made: " + guessesMade;
+
         }
 
     }
