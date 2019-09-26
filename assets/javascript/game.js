@@ -7,3 +7,9 @@ var guessesLeft = 9;
 var winText = document.getElementById("win-text");
 var loseText = document.getElementById("lose-text");
 var triesLeft = document.getElementById("tries-left");
+var userGuesses = document.getElementById("user-guesses");
+
+winText.textContent = "Wins: " + wins;
+loseText.textContent = "Losses: " + losses;
+triesLeft.textContent = "Guesses Left: " + guessesLeft;
+userGuesses.textContent = "";
