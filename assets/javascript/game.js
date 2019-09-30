@@ -27,7 +27,8 @@ document.onkeyup = function(event) {
     
     var validChoice = computerChoices.indexOf(userChoice);
 
-    if (validChoice !== -1) {
+
+    if ((validChoice !== -1) && (guessesMade.indexOf(userChoice) === -1)) {
 
         if (userChoice === computerGuess) {
 
@@ -43,7 +44,7 @@ document.onkeyup = function(event) {
 
         } else if (guessesLeft > 0) {
 
-            guessesMade.push(" " + userChoice);
+            guessesMade.push(userChoice);
             userGuesses.textContent = "Guesses Made: " + guessesMade;
             guessesLeft--;
             triesLeft.textContent = "Guesses Left: " + guessesLeft;
